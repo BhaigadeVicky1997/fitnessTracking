@@ -72,6 +72,7 @@ export class ExerciseService {
     
   //   this.store.dispatch(new fromAction.stopTraining());
     this.store.select(fromTraining.getActiveTraining).pipe(take(1)).subscribe(ex => {
+      console.log(ex);
       this.addDataToDatabase({
         ...ex,
         Date: new Date(),
